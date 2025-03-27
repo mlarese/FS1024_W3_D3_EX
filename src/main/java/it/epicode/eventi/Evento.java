@@ -10,7 +10,8 @@ import java.util.List;
 
 @Entity
 @Table(name="eventi")
-public class Evento {
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class Evento {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;

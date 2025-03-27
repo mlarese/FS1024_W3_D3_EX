@@ -1,5 +1,6 @@
 package it.epicode.persone;
 
+import it.epicode.eventi.gara_atletica.GaraDiAtletica;
 import it.epicode.partecipazioni.Partecipazione;
 import jakarta.persistence.*;
 
@@ -28,6 +29,13 @@ public class Persona {
 
     @OneToMany(mappedBy = "persona")
     List<Partecipazione> listaPartecipazioni = new ArrayList<>();
+
+    @OneToMany(mappedBy = "vincitore")
+    List<GaraDiAtletica> gareVinte = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "atleti")
+    List<GaraDiAtletica> garePartecipate = new ArrayList<>();
+
 
     public Persona(Long id, String nome, String cognome, String email, LocalDate dataNascita, Sesso sesso, List<Partecipazione> listaPartecipazioni) {
         this.id = id;
