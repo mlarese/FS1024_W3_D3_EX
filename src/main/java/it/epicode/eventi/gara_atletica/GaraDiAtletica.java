@@ -12,7 +12,7 @@ import jakarta.persistence.ManyToOne;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
-
+//
 @Entity
 public class GaraDiAtletica extends Evento {
 
